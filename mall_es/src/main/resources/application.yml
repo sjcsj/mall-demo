@@ -1,0 +1,24 @@
+server:
+  port: 8800
+
+spring:
+  application:
+    name: mall-es
+  cloud:
+    nacos:
+      server-addr: localhost:8848  #nacos服务地址
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+seata: # 配置seata
+  tx-service-group: mygroup
+  service:
+    vgroup-mapping:
+      mygroup: default
+  client:
+    undo:
+      log-serialization: kryo # 改变undo_log的序列化方式

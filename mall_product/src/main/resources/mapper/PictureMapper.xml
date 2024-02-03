@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mall.mapper.PictureMapper">
+    <delete id="deleteByProductId">
+        delete
+        from picture
+        where product_id = #{id}
+    </delete>
+    <select id="getPicturesByProductId" resultType="cn.mall.domain.Picture">
+        select *
+        from picture
+        where product_id = #{id}
+    </select>
+    <select id="getByProductId" resultType="cn.mall.domain.Picture">
+        select *
+        from picture
+        where product_id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mall.mapper.UserMapper">
+    <select id="selectRoleByUserId" resultType="java.lang.String">
+        select role
+        from user
+        where id = #{id}
+    </select>
+    <select id="selectQuestionById" resultType="java.lang.String">
+        select question
+        from user
+        where id = #{id}
+    </select>
+    <select id="getUserList" resultType="cn.mall.domain.User">
+        select *
+        from user
+        where role = 'user'
+    </select>
+    <select id="getAdminList" resultType="cn.mall.domain.User">
+        select *
+        from user
+        where role = 'admin'
+    </select>
+</mapper>

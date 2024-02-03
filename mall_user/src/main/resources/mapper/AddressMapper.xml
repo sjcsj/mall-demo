@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mall.mapper.AddressMapper">
+    <update id="updateStatus">
+        update address
+        set status = 0
+        where user_id = #{userId}
+    </update>
+    <delete id="deleteByUserId">
+        delete
+        from address
+        where user_id = #{id}
+    </delete>
+    <select id="getAddressByUserId" resultType="cn.mall.domain.Address">
+        select *
+        from address
+        where user_id = #{id}
+        order by status desc
+    </select>
+    <select id="selectOtherAddress" resultType="cn.mall.domain.Address">
+        select *
+        from address
+        where id != #{id}
+          and user_id = #{userId}
+          and status = 1
+    </select>
+
+</mapper>

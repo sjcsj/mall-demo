@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mall.mapper.TypeattributeMapper">
+    <select id="getTypeattributeByTypeId" resultType="cn.mall.domain.TypeAttribute">
+        select *
+        from typeattribute
+        where type_id = #{id}
+    </select>
+    <select id="getByTypeId" resultType="cn.mall.domain.TypeAttribute">
+        select *
+        from typeattribute
+        where type_id = #{id}
+    </select>
+</mapper>

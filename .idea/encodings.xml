@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/api_gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api_gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common_ceshi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common_code/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common_code/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/feign-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_ceshi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_ceshi/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_es/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_es/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_evaluation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_evaluation/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_product/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_product/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_shoppingcart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_shoppingcart/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall_user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

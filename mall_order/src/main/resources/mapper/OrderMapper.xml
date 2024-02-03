@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mall.mapper.OrderMapper">
+    <insert id="insert1">
+        insert into `order` (id, user_id, address_id, product_id, amount, unitprice, totalprice)
+        values (null, #{userId}, #{addressId}, #{productId}, #{amount}, #{unitprice}, #{totalprice})
+    </insert>
+    <update id="updateById2">
+        update `order`
+        set address_id = #{addressId}
+        where id = #{id}
+    </update>
+    <update id="updateById1">
+        update `order`
+        set amount     = #{amount},
+            totalprice = #{totalprice}
+        where id = #{id}
+    </update>
+    <update id="updateById3">
+        update `order`
+        set createtime = #{createtime},
+            status     = #{status}
+        where id = #{id}
+    </update>
+    <update id="updateById4">
+        update `order`
+        set paytime = #{paytime},
+            status  = #{status}
+        where id = #{id}
+    </update>
+    <update id="updateById5">
+        update `order`
+        set deliverytime = #{deliverytime},
+            status       = #{status}
+        where id = #{id}
+    </update>
+    <update id="updateById6">
+        update `order`
+        set confirmtime = #{confirmtime},
+            status      = #{status}
+        where id = #{id}
+    </update>
+    <update id="updateDeleted">
+        update `order`
+        set deleted = 1
+        where id = #{id}
+    </update>
+    <update id="updateById7">
+        update `order`
+        set evaluation = #{evaluation}
+        where id = #{id}
+    </update>
+    <delete id="deleteNotSubmit">
+        delete
+        from `order`
+        where user_id = #{userId}
+          and status = 0
+    </delete>
+    <delete id="deleteNoPay">
+        delete
+        from `order`
+        where id = #{id}
+          and status = 1
+    </delete>
+    <select id="showNotSubmit" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where user_id = #{userId}
+          and status = 0
+    </select>
+    <select id="getOrderById" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where id = #{id}
+    </select>
+    <select id="getOrderList" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where status = #{status}
+        limit #{a}, #{b}
+    </select>
+    <select id="getOrderList1" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where status != 0
+    </select>
+    <select id="getAmount" resultType="java.lang.Integer">
+        select count(*)
+        from `order`
+        where user_id = #{userId}
+          and status = #{status}
+    </select>
+    <select id="getAmount1" resultType="java.lang.Integer">
+        select count(*)
+        from `order`
+        where user_id = #{userId}
+          and status = 4
+          and evaluation is null
+          and deleted = 0
+    </select>
+    <select id="getOrder" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where user_id = #{userId}
+          and status = #{status}
+    </select>
+    <select id="getOrder1" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where user_id = #{userId}
+          and status = 4
+          and evaluation is null
+          and deleted = 0
+    </select>
+    <select id="getOrder11" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where user_id = #{userId}
+          and deleted = 0
+    </select>
+    <select id="getOrder2" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where user_id = #{userId}
+          and status = 4
+          and evaluation is not null
+          and deleted = 0
+    </select>
+    <select id="getOrderByUserIdAndStatus" resultType="cn.mall.domain.Order">
+        select *
+        from `order`
+        where user_id = #{userId}
+          and status = 0
+    </select>
+</mapper>

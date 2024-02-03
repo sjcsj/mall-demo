@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mall.mapper.ProductMapper">
+    <update id="addcollectednumber">
+        update product
+        set collectednumber = collectednumber + 1
+        where id = #{id}
+    </update>
+
+    <update id="reducecollectednumber">
+        update product
+        set collectednumber = collectednumber - 1
+        where id = #{id}
+    </update>
+    <update id="change">
+        update product
+        set stock = stock - #{amount}
+        where id = #{id}
+    </update>
+    <update id="change1">
+        update product
+        set volume = volume + #{amount}
+        where id = #{id}
+    </update>
+    <update id="change2">
+        update product
+        set stock = stock + #{amount}
+        where id = #{id}
+    </update>
+    <select id="getById" resultType="cn.mall.domain.Product">
+        select *
+        from product
+        where id = #{id}
+    </select>
+    <select id="getProductByTypeId" resultType="cn.mall.domain.Product">
+        select *
+        from product
+        where type_id = #{id}
+    </select>
+    <select id="getIdByProductNameAndSnapShot" resultType="java.lang.Integer">
+        select id
+        from product
+        where productname = #{productname}
+          and snapshot = #{snapshot}
+    </select>
+    <select id="getProduct" resultType="cn.mall.domain.Product">
+        select *
+        from product
+        <where>
+            <if test="keyword != null and keyword != ''">
+                and productname like concat('%', #{keyword}, '%')
+            </if>
+        </where>
+        limit #{a}, #{b}
+    </select>
+    <select id="getCountByKeyword" resultType="java.lang.Integer">
+        select count(*)
+        from product
+        <where>
+            <if test="keyword != null and keyword != ''">
+                and productname like concat('%', #{keyword}, '%')
+            </if>
+        </where>
+    </select>
+    <select id="checkStock" resultType="cn.mall.domain.Product">
+        select *
+        from product
+        where stock = 0
+    </select>
+</mapper>

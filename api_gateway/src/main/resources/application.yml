@@ -1,0 +1,65 @@
+server:
+  port: 10010
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: localhost:8848  #nacos服务地址
+    gateway:
+      routes: #网关路由配置
+        - id: mall-user1
+          uri: lb://mall-user
+          predicates:
+            - Path=/user/**
+        - id: mall-user2
+          uri: lb://mall-user
+          predicates:
+            - Path=/address/**
+        - id: mall-user3
+          uri: lb://mall-user
+          predicates:
+            - Path=/collection/**
+
+        - id: mall-product1
+          uri: lb://mall-product
+          predicates:
+            - Path=/picture/**
+        - id: mall-product2
+          uri: lb://mall-product
+          predicates:
+            - Path=/productattribute/**
+        - id: mall-product3
+          uri: lb://mall-product
+          predicates:
+            - Path=/product/**
+        - id: mall-product4
+          uri: lb://mall-product
+          predicates:
+            - Path=/typeattribute/**
+        - id: mall-product5
+          uri: lb://mall-product
+          predicates:
+            - Path=/type/**
+
+        - id: mall-shoppingcart
+          uri: lb://mall-shoppingcart
+          predicates:
+            - Path=/shoppingcart/**
+
+        - id: mall-order
+          uri: lb://mall-order
+          predicates:
+            - Path=/order/**
+
+        - id: mall-evaluation
+          uri: lb://mall-evaluation
+          predicates:
+            - Path=/evaluation/**
+
+        - id: mall-es
+          uri: lb://mall-es
+          predicates:
+            - Path=/es/**
+

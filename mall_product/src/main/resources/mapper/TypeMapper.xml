@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mall.mapper.TypeMapper">
+    <update id="amountincrease">
+        update type
+        set amount = amount + 1
+        where id = #{typeId}
+    </update>
+    <update id="amountdecrease">
+        update type
+        set amount = amount - 1
+        where id = #{typeId}
+    </update>
+    <select id="selectByType" resultType="cn.mall.domain.Type">
+        select *
+        from type
+        where type = #{type}
+    </select>
+    <select id="getType" resultType="cn.mall.domain.Type">
+        select * from type
+        <where>
+            <if test="keyword != null and keyword != '' ">
+                and type like concat('%', #{keyword}, '%')
+            </if>
+        </where>
+        limit #{a}, #{b}
+    </select>
+    <select id="getCountByKeyword" resultType="java.lang.Integer">
+        select count(*) from type
+        <where>
+            <if test="keyword != null and keyword != '' ">
+                and type like concat('%', #{keyword}, '%')
+            </if>
+        </where>
+    </select>
+    <select id="getTypeName" resultType="java.lang.String">
+        select type
+        from type
+        where id = #{id}
+    </select>
+</mapper>
